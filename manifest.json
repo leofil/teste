@@ -1,0 +1,15 @@
+{
+  "name": "My Ionic App",
+  "short_name": "My Ionic App",
+  "start_url": "index.html",
+  "display": "standalone",
+  "icons": [{
+    "src": "icone32.png",
+    "sizes": "32x32",
+    "type": "image/png"
+  },{
+    "src": "icone144.png",
+    "sizes": "144x144",
+    "type": "image/png"
+  }]
+}

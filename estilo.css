@@ -1,0 +1,411 @@
+/* RESET */
+*{
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    /* BOX-SIZING, utilizado para que não tenhamos problemas com os paddings, logo, o tamanho do elemento vai ser o a partir da borda. */
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* Retirando a decoração dos itens-lista */
+nav, ul{
+    list-style: none;
+}
+
+/* Tirando formato de link dos itens menu */
+a{
+    text-decoration: none;
+    cursor: pointer;
+    opacity: 0.9;
+}
+
+/* Dando Opacidade quando o cursor estiver sobre um link */
+a:hover{
+    opacity: 1;
+}
+
+/* CONFIGURAÇÕES INICIAIS, ACIMA */
+
+
+/* HEADER */
+header{
+    background-color: #fff;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+}
+
+header img{
+    width: 200px;
+}
+
+header nav{
+    display: flex;
+}
+header li a{
+    color: #191c03;
+}
+header li{
+    margin: 0 15px;
+}
+header li:first-child {
+    margin-left: 0;
+}
+header li:last-child {
+    margin-left: 0;
+}
+@media (max-width: 700px){
+    header{
+        flex-direction: column;
+    }
+    header img{
+        margin-bottom: 15px;
+    }
+}
+
+/* SEÇÃO DO HERO IMAGE */
+
+.hero{
+    background-image: url(../img/hero.jpg);
+    
+    /* background-size: possibilita o ajuste das imagens do background, ao invés do comportamento padrão do navegador de mostrar a imagem no seu tamanho real. 
+
+    conver: A imagem cobre o container inteiro, com a propriedade cover, sem perder qualidade. Porém, a imagem e o container tem que ter o mesmo tamanho. */
+    background-size: cover;
+    
+    /* Altura mínima da tela */
+    min-height: 100vh;
+    
+    /* Cor branca para o texto do hero */
+    color: #fff;
+    
+    /* Deixando o hero flex */
+    display: flex;
+    
+    /* Direção dos itens - Colunas ou linhas*/
+    flex-direction: column;
+    
+    /* Alinhamento vertical dos itens dentro do flex - em cima, no meio ou embaixo*/
+    justify-content: center;
+    
+    /* Alinhamento horizontal dos itens dentro do flex - em cima, no meio ou embaixo*/
+    align-items: center; 
+    
+    /* Alinhamento do Texto */
+    text-align: center;
+}
+
+.hero h1{
+    /* Tamanho da Fonte */
+    font-size: 3.2rem;
+    /* Margem inferior de um item para o outro */
+    margin-bottom: 15px;
+}
+
+.hero h3{
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.hero .btn{
+    /* Cor de Fundo do Botão */
+    background-color: #fff;
+    /* Arredondamento das Bordas */
+    border-radius: 4px;
+    /* Cor do Texto */
+    color: #191c03;
+    /* Espaçamento interno */
+    padding: 20px 50px;
+    /* Transformando texto do link maiúsculo */
+    text-transform: uppercase;
+}
+
+/* Configurações de breakpoint para o hero */
+
+@media (max-width: 700px){
+    .hero h1{
+        font-size: 2.5rem;
+    }
+    .hero h3{
+        font-size: 1.5rem;
+    }
+}
+
+/* SEÇÃO CONHEÇA O HOTEL */
+
+.conheca-o-hotel{
+    /* Transformando em flexbox */
+    display: flex;
+    /* Colocando os elementos em coluna */
+    flex-direction: column;
+    /* Alinhando os itens verticalmente ao centro */
+    align-items: center;
+    /* Topo e base com 100px e aos lados com 50px */
+    padding: 100px 50px;
+}
+
+.conheca-o-hotel h3{
+    /* Tamanho da fonte */
+    font-size: 2rem;
+    /* Espaçamento abaixo do elemento */
+    margin-bottom: 35px;
+    color: #191c03;
+    text-align: center;
+}
+
+.conheca-o-hotel p{
+    /* Tamanho máximo da largura, para que não fique muito grande */
+    max-width: 800px;
+    /* Espaçamento abaixo do elemento */
+    margin-bottom: 35px;
+    /* Alinhamento do texto */
+    text-align: center;
+    color: #191c03;
+}
+
+/* Criando uma linha abaixo do texto */
+.conheca-o-hotel hr{
+    width: 200px;
+    height: 2px;
+    background-color: #191c03;
+    margin-bottom: 70px;
+    /* Deixando a linha mais grossa */
+    border: none;
+}
+
+/* Grid da section conheça o hotel */
+.conheca-o-hotel .grid {
+    /* Largura do Grid */
+    width: 100%;
+    /* Transformando em Flexbox */
+    display: flex;
+    /* Linha ou Coluna */
+    flex-direction: row;
+    /* Permitir a quebra de linha? */
+    flex-wrap: wrap;
+}
+
+.conheca-o-hotel .grid li{
+    /* Altura de cada item do li */
+    height: 350px;
+    /* Espaçamento interno */
+    padding: 20px;
+    /* Arredondamento dos cantos */
+    border-radius: 4px;
+    /* Propriedade que permite controlar onde o background começa a ser desenhado */
+    background-clip: content-box;
+    /* Tamanho do background - do tamanho do elemento */
+    background-size: cover;
+    /* Posicionamento do background sempre ao centro do elemento */
+    background-position: center;
+}
+
+.conheca-o-hotel .grid li.small{
+    /* Tamanho da grid small 40% da grid */
+    flex-basis: 40%;
+}
+
+.conheca-o-hotel .grid li.large{
+    flex-basis: 60%;
+}
+
+/* Media Query para a seção */
+@media (max-width: 700px){
+    .conheca-o-hotel .grid li.small, .conheca-o-hotel .grid li.large{
+        flex-basis: 100%;
+    }
+}
+
+/* SESÃO CARACTERÍSTICAS */
+
+.caracteristicas{
+    /* Transformando em flexbox */
+    display: flex;
+    /* Colocando os elementos em coluna */
+    flex-direction: column;
+    /* Alinhando os itens verticalmente ao centro */
+    align-items: center;
+    /* Topo e base com 100px e aos lados com 50px */
+    padding: 100px 50px;
+    background-color: #191c03;
+}
+
+.caracteristicas h3{
+    /* Tamanho da fonte */
+    font-size: 2rem;
+    /* Espaçamento abaixo do elemento */
+    margin-bottom: 35px;
+    color: #fff;
+    text-align: center;
+}
+
+.caracteristicas p{
+    /* Tamanho máximo da largura, para que não fique muito grande */
+    max-width: 800px;
+    /* Espaçamento abaixo do elemento */
+    margin-bottom: 35px;
+    /* Alinhamento do texto */
+    text-align: center;
+    color: #fff;
+}
+
+/* Criando uma linha abaixo do texto */
+.caracteristicas hr{
+    width: 200px;
+    height: 2px;
+    background-color: #fff;
+    margin-bottom: 70px;
+    /* Deixando a linha mais grossa */
+    border: none;
+}
+
+/*Configuração da GRID da Sessão Características*/
+.caracteristicas .grid{
+    width: 100%;
+    display: flex;
+}
+
+/* Configuração dos li */
+.caracteristicas .grid li{
+    padding: 0 30px;
+    text-align: center;
+}
+
+/* Configuração dos icones dentro do li*/ 
+.caracteristicas .grid li i{
+    color: #c3c63b;
+    font-size: 3.5rem;
+    margin-bottom: 30px;
+}
+
+/* Configuração dos h4 dentro do li*/ 
+.caracteristicas .grid li h4{
+    color: #c3c63b;
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+
+/* Configuração do p dentro do li*/ 
+.caracteristicas .grid li p{
+    color: #fff;
+    text-align: center;
+}
+
+/* Configuração do media query */ 
+@media (max-width: 700px){
+    .caracteristicas .grid{
+        flex-direction: column;
+    }
+}
+
+/* SEÇÃO NEWSLETTER */
+
+.newsletter{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 100px 50px;
+    
+}
+
+.newsletter h3{
+    /* Tamanho da fonte */
+    font-size: 2rem;
+    /* Espaçamento abaixo do elemento */
+    margin-bottom: 35px;
+    color: #191c03;
+    text-align: center;
+}
+
+.newsletter p{
+    /* Tamanho máximo da largura, para que não fique muito grande */
+    max-width: 800px;
+    /* Espaçamento abaixo do elemento */
+    margin-bottom: 35px;
+    /* Alinhamento do texto */
+    text-align: center;
+    color: #191c03;
+}
+
+/* Criando uma linha abaixo do texto */
+.newsletter hr{
+    width: 200px;
+    height: 2px;
+    background-color: #191c03;
+    margin-bottom: 70px;
+    /* Deixando a linha mais grossa */
+    border: none;
+}
+
+/* Configurando o Formulário */
+
+.newsletter form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 80%;
+    max-width: 800px;
+}
+
+.newsletter input{
+    padding: 15px;
+    border: 1px solid #c3c63b;
+    border-radius: 4px;
+    margin-right: 15px;
+    /*Essa propriedade faz com que o elemento ocupe o espaço completo de 1 item do grid, ou seja, toda a largura disponível*/
+    flex: 1;
+}
+
+.newsletter button{
+    padding: 15px;
+    background-color: #c3c63b;
+    color: #fff;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Configuração do media query */ 
+@media (max-width: 700px){
+    .newsletter input{
+        flex-basis: 100%;
+        margin-bottom: 15px;
+    }
+}
+
+/* FOOTER DA PÁGINA */
+
+footer{
+    display: flex;
+    flex-direction: column;
+    background-color: #191c03;
+    padding: 50px;
+    align-items: center;
+}
+
+footer ul{
+    display: flex;
+    margin-bottom: 25px;
+}
+
+footer ul li{
+    margin-right: 10px;
+}
+
+footer ul li a{
+    color: #c3c63b;
+    font-size: 2rem;
+}
+
+footer p{
+    color: #c3c63b;
+    text-align: center;
+}
