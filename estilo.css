@@ -72,7 +72,7 @@ header li:last-child {
 /* SEÇÃO DO HERO IMAGE */
 
 .hero{
-    background-image: url(../img/hero.jpg);
+    background-image: url(hero.jpg);
     
     /* background-size: possibilita o ajuste das imagens do background, ao invés do comportamento padrão do navegador de mostrar a imagem no seu tamanho real. 
 
